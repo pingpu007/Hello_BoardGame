@@ -2,11 +2,13 @@ import React from "react"
 import { Stack } from "expo-router"
 import { useFonts } from "expo-font"
 
+import { Header } from "../components/common"
+
 const Layout = () => {
     const [fontLoaded] = useFonts({
-        KanitRegular: require('../assets/fonts/Kanit-Regular.tff'),
-        KanitMedium: require('../assets/fonts/Kanit-Medium.tff'),
-        KanitBold: require('../assets/fonts/Kanit-Bold.tff'),
+        KanitRegular: require('../assets/fonts/Kanit-Regular.ttf'),
+        KanitMedium: require('../assets/fonts/Kanit-Medium.ttf'),
+        KanitBold: require('../assets/fonts/Kanit-Bold.ttf'),
     })
 
     if (!fontLoaded) {
@@ -14,11 +16,24 @@ const Layout = () => {
     }
 
     return (
-        <Stack>
-            <Stack.Screen
-                name="index"
-            />
-        </Stack>
+        <>
+            <Header />
+            <Stack>
+                <Stack.Screen
+                    name="index"
+                    options={{
+                        headerShown: false
+                    }}
+                    
+                />
+                <Stack.Screen
+                    name="invite"
+                    options={{
+                        headerShown: false
+                    }}
+                />
+            </Stack>
+        </>
     )
 }
 
