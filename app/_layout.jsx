@@ -24,10 +24,9 @@ const Layout = () => {
                     options={{
                         headerShown: false
                     }}
-                    
                 />
                 <Stack.Screen
-                    name="invite"
+                    name="invite/index"
                     options={{
                         headerShown: false
                     }}
