@@ -23,6 +23,6 @@ const Header = () => {
             </View>
         </SafeAreaView>
     )
-}
+}   
 
 export default Header
