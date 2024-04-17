@@ -19,6 +19,9 @@ const Header = () => {
                     <Link href={'/invite'}>
                         <Text style={styles.text}>Invite</Text>
                     </Link>
+                    <Link href={'/qrcode'}>
+                        <Text style={styles.text}>Qrcode</Text>
+                    </Link>
                 </View>
             </View>
         </SafeAreaView>
