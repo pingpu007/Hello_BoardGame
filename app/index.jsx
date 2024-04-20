@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { BlurView } from 'expo-blur';
+import { BlurView } from "expo-blur";
+import axios from "axios";
 
 import {
   View,
@@ -27,36 +27,34 @@ const index = () => {
   };
 
   return (
-    <SafeAreaView>
-      <ImageBackground style={styles.box} source={image} resizeMode="cover">
-        <BlurView intensity={200} style={styles.backgroundblur}>
-          <Text style={styles.texthead}>BOARD GAME</Text>
+    <ImageBackground style={styles.box} source={image} resizeMode="cover">
+      <BlurView intensity={200} style={styles.backgroundblur}>
+        <Text style={styles.texthead}>BOARD GAME</Text>
 
-          <TextInput
-            style={styles.BorderInput}
-            keyboardType="default"
-            placeholder="username"
-            onChangeText={(value) => setTextInputName(value)}
+        <TextInput
+          style={styles.BorderInput}
+          keyboardType="default"
+          placeholder="username"
+          onChangeText={(value) => setTextInputName(value)}
+        />
+
+        <TextInput
+          style={styles.BorderInput}
+          maxLength={12}
+          secureTextEntry={true}
+          placeholder="password"
+        />
+
+        <View style={styles.ArreaButton}>
+          <Button
+            title="LOGIN"
+            style={styles.buttoncustom}
+            color="#B1D8B7"
+            onPress={checkTextInput}
           />
-
-          <TextInput
-            style={styles.BorderInput}
-            maxLength={12}
-            secureTextEntry={true}
-            placeholder="password"
-          />
-
-          <View style={styles.ArreaButton}>
-            <Button
-              title="LOGIN"
-              style={styles.buttoncustom}
-              color="#B1D8B7"
-              onPress={checkTextInput}
-            />
-          </View>
-        </BlurView>
-      </ImageBackground>
-    </SafeAreaView>
+        </View>
+      </BlurView>
+    </ImageBackground>
   );
 };
 
@@ -77,7 +75,7 @@ const styles = StyleSheet.create({
   },
 
   texthead: {
-    color: '#B1D8B7',
+    color: "#B1D8B7",
     paddingVertical: 20,
     elevation: 50,
     fontSize: 30,
@@ -100,7 +98,7 @@ const styles = StyleSheet.create({
     margin: 12,
     borderWidth: 1,
     padding: 10,
-    borderColor:'#B1D8B7',
+    borderColor: "#B1D8B7",
   },
 
   buttoncustom: {

@@ -19,6 +19,9 @@ const Header = () => {
                     <Link href={'/invite'}>
                         <Text style={styles.text}>Invite</Text>
                     </Link>
+                    <Link href={'/addgame'}>
+                        <Text style={styles.text}>AddGame</Text>
+                    </Link>
                 </View>
             </View>
         </SafeAreaView>
